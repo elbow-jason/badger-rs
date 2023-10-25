@@ -100,6 +100,9 @@ impl Default for Error {
     }
 }
 
+unsafe impl Send for Error {}
+unsafe impl Sync for Error {}
+
 impl Error {
     pub fn is_io(&self) -> bool {
         match self {
